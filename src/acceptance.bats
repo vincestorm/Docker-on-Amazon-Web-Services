@@ -16,14 +16,6 @@ setup() {
   [ $output = 0 ]
 }
 
-@test "create todo item" {
-  run curl -i -X POST -H "Content-Type: application/json" $url/todos -d "$item"
-  [ $status = 0 ]
-  [[ $output =~ "201 Created" ]] || false
-  [[ $output =~ $location ]] || false
-  [ $(curl ${BASH_REMATCH[1]} | jq '.title') = $(echo "$item" | jq '.title') ]
-}
-
 @test "delete todo item" {
   run curl -i -X POST -H "Content-Type: application/json" $url/todos -d "$item"
   [ $status = 0 ]
