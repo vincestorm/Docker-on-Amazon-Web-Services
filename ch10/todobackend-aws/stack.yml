@@ -45,7 +45,7 @@ Resources:
   PrivateSubnet:
     Type: AWS::EC2::Subnet
     Properties:
-      AvailabilityZone: !Sub ${AWS::Region}a
+      AvailabilityZone: !Sub ${AWS::Region}f
       CidrBlock: 172.31.96.0/20
       VpcId: !Ref VpcId
   PrivateRouteTable:

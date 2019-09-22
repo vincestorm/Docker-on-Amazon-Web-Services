@@ -974,7 +974,7 @@ Resources:
         - !Ref ApplicationDatabaseSecurityGroup
       DBSubnetGroupName: !Ref ApplicationDatabaseSubnetGroup
       MultiAZ: "false"
-      AvailabilityZone: !Sub ${AWS::Region}a
+      AvailabilityZone: !Sub ${AWS::Region}e
       Tags:
         - Key: Name
           Value: !Sub ${AWS::StackName}-db
@@ -1112,7 +1112,7 @@ Resources:
     Properties:
       ImageId: !Ref ApplicationImageId
       InstanceType: t2.micro
-      KeyName: admin
+      KeyName: mykey
       IamInstanceProfile: !Ref ApplicationAutoscalingInstanceProfile
       SecurityGroups:
         - !Ref ApplicationAutoscalingSecurityGroup
